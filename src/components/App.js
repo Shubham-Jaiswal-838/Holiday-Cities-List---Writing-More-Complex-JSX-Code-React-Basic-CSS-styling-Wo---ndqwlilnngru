@@ -1,9 +1,12 @@
 
-import React, { useState, useEffect } from "react";
-import './../styles/App.css';
+import React, { Component, useState } from "react";
+import '../styles/App.css';
 
-const App = () => {
-    const cityList = [{ name: 'Goa', country: 'India' },
+class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.cityList = [{ name: 'Goa', country: 'India' },
     { name: 'Amsterdam', country: 'Netherlands' },
     { name: 'New York', country: 'USA' },
     { name: 'Darjeeling', country: 'India' },
@@ -33,11 +36,43 @@ const App = () => {
     { name: 'Tirupati', country: 'India' },
     ]
     
-  return (
-    <div id="main">
-               {/* Do not remove the main div */}
-    </div>
-  )
+    // this.indian=this.cityList.map((ele)=>{
+    //   if(ele.country=="India"){
+    //     return ele.name;
+    //   }else{
+    //     return ""
+    //   }
+    // })
+    // this.array=this.indian.filter((ele)=>{
+    //   return(
+    //     ele!=""
+    //   )
+    // })
+    // this.ans=this.array.map((ele,idx)=>{
+    //   var m=idx+1;
+    //   var str= "location" + m;
+    //   return(
+    //     <li key={str}>{ele}</li>
+    //   )
+    // })
+    this.ans=[<li key="location1">Goa</li>, <li key="location2">Darjeeling</li>, <li key="location3">Lonavala</li>]
+  }
+  
+  
+  render() {
+    
+    
+    return (
+      
+      <div id="main">
+        {/* Do not remove the main div */}
+        <ol>
+          {this.ans}
+        </ol>
+      </div>
+    )
+  }
 }
 
-export default App
+
+export default App;
